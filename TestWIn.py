@@ -1,3 +1,5 @@
+
+
 from instr import *
 from second_win import *
 from PyQt5.QtCore import Qt, QTimer,QTime,QLocale
@@ -40,5 +42,4 @@ def main():
     app = QApplication([])
     mw = MainWin()
     app.exec_()
-
 main()
