@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
     QHBoxLayout, QVBoxLayout, QGridLayout,
     QGroupBox, QRadioButton,
     QPushButton, QLabel, QListWidget, QLineEdit)
+from PyQt5.QtGui import QPixmap,QMovie
 
 from instr import *
 from final_win import *
@@ -79,6 +80,7 @@ class TestWin(QWidget):
         self.h_line.addLayout(self.r_line)
         self.setLayout(self.h_line)
 
+
     def next_click(self):
         self.hide()
         self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(), self.line_test2.text(),
@@ -144,3 +146,11 @@ class TestWin(QWidget):
         self.btn_test1.clicked.connect(self.timer_test)
         self.btn_test2.clicked.connect(self.timer_sits)
         self.btn_test3.clicked.connect(self.timer_final)
+    def gif(self):
+        self.gif_label = QLabel(self)
+        self.gif_label.setAlignment(Qt.Aligndown | Qt.Alignright)
+
+        self.movie = QMovie("Hellooooooo.gif")
+        self.gif_label.setMovie(self.movie)
+        self.movie.start()
+
